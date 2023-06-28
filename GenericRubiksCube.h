@@ -15,6 +15,7 @@ using namespace std;
  * We'll benchmark all models and observe which one is better for performance.
  */
 class GenericRubiksCube { // defining enums for notations
+public:
    enum class FACE {
        UP,
        LEFT,
@@ -119,7 +120,7 @@ class GenericRubiksCube { // defining enums for notations
 
     virtual GenericRubiksCube &f2() = 0;
 
-    virtual GenericRubiksCube &u() = 0;
+    virtual GenericRubiksCube &u() =0;
 
     virtual GenericRubiksCube &uPrime() = 0;
 
