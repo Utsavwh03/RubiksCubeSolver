@@ -252,5 +252,5 @@ public:
             for (int i = 0; i < 54; i++) str += r1.cube[i];
             return hash<string>()(str);
         }
-    }
+    };
 };
