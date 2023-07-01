@@ -32,7 +32,7 @@ private:
 public:
     T rubiksCube;
     int max_depth_search;
-    DFSSolver(T _rubiksCube,int dep){
+    DFSSolver(T _rubiksCube,int dep=10){
             rubiksCube=_rubiksCube;
             max_depth_search=dep;
     }
