@@ -37,7 +37,7 @@ public:
             max_depth_search=dep;
     }
     vector<GenericRubiksCube::MOVE>solve(){
-        dfs(1);
+       dfs(1);
         return moves;
     }
 };
