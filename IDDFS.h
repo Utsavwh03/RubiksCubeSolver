@@ -5,7 +5,6 @@
 #ifndef RUBIKSCUBESOLVER_IDDFS_H
 #define RUBIKSCUBESOLVER_IDDFS_H
 
-#endif //RUBIKSCUBESOLVER_IDDFS_H
 #include "GenericRubiksCube.h"
 #include "DFSSolver.h"
 
@@ -32,3 +31,4 @@ public:
         return moves;
     }
 };
+#endif //RUBIKSCUBESOLVER_IDDFS_H

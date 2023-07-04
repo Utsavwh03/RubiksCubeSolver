@@ -2,8 +2,7 @@
 // Created by Utsav Dhanuka on 30/06/23.
 //
 #include "GenericRubiksCube.h"
- class RubiksCubeBitboard : public GenericRubiksCube
- {
+ class RubiksCubeBitboard : public GenericRubiksCube {
  private:
      uint64_t solved_side_config[6]{};
 
@@ -11,11 +10,13 @@
      int arr[3][3] = {{0, 1, 2},
                       {7, 8, 3},
                       {6, 5, 4}};
-     void rotateFace(int ind){
-         uint64_t side=bitboard[ind];
-         side=side>>48;
-         bitboard[ind]=(bitboard[ind]<<16)|(side);
+
+     void rotateFace(int ind) {
+         uint64_t side = bitboard[ind];
+         side = side >> 48;
+         bitboard[ind] = (bitboard[ind] << 16) | (side);
      }
+
      void rotateSide(int s1, int s1_1, int s1_2, int s1_3, int s2, int s2_1, int s2_2, int s2_3) {
          uint64_t clr1 = (bitboard[s2] & (one_8 << (8 * s2_1))) >> (8 * s2_1);
          uint64_t clr2 = (bitboard[s2] & (one_8 << (8 * s2_2))) >> (8 * s2_2);
@@ -25,6 +26,7 @@
          bitboard[s1] = (bitboard[s1] & ~(one_8 << (8 * s1_2))) | (clr2 << (8 * s1_2));
          bitboard[s1] = (bitboard[s1] & ~(one_8 << (8 * s1_3))) | (clr3 << (8 * s1_3));
      }
+
      int get5bitCorner(string corner) {
          int ret = 0;
          string actual_str;
@@ -60,17 +62,16 @@
 
 
  public:
-     uint64_t bitboard[6]={};
-     RubiksCubeBitboard(){
-         for(int side=0;side<6;side++)
-         {
-             uint64_t set_bit= 1<<side ;
-             bitboard[side]=0;
-             for(int fac_id =0;fac_id<=7;fac_id++)
-             {
-                 bitboard[side]|=set_bit<<(8*fac_id);
+     uint64_t bitboard[6] = {};
+
+     RubiksCubeBitboard() {
+         for (int side = 0; side < 6; side++) {
+             uint64_t set_bit = 1 << side;
+             bitboard[side] = 0;
+             for (int fac_id = 0; fac_id <= 7; fac_id++) {
+                 bitboard[side] |= set_bit << (8 * fac_id);
              }
-             solved_side_config[side]=bitboard[side];
+             solved_side_config[side] = bitboard[side];
          }
      }
 
@@ -88,12 +89,14 @@
          }
          return (COLOR)(bit_pos - 1);
      }
+
      bool isSolved() const override {
          for (int i = 0; i < 6; i++) {
              if (solved_side_config[i] != bitboard[i]) return false;
          }
          return true;
      }
+
      GenericRubiksCube &u() override {
          this->rotateFace(0);
          uint64_t temp = bitboard[2] & one_24;
@@ -119,6 +122,7 @@
 
          return *this;
      }
+
      GenericRubiksCube &l() override {
          this->rotateFace(1);
          uint64_t clr1 = (bitboard[2] & (one_8 << (8 * 0))) >> (8 * 0);
@@ -136,6 +140,7 @@
          return *this;
 
      }
+
      GenericRubiksCube &lPrime() override {
          this->l();
          this->l();
@@ -150,6 +155,7 @@
 
          return *this;
      }
+
      GenericRubiksCube &f() override {
          this->rotateFace(2);
 
@@ -165,19 +171,23 @@
          bitboard[3] = (bitboard[3] & ~(one_8 << (8 * 7))) | (clr2 << (8 * 7));
          bitboard[3] = (bitboard[3] & ~(one_8 << (8 * 0))) | (clr3 << (8 * 0));
 
-         return *this;}
+         return *this;
+     }
+
      GenericRubiksCube &fPrime() override {
          this->f();
          this->f();
          this->f();
          return *this;
      }
+
      GenericRubiksCube &f2() override {
          this->f();
          this->f();
 
          return *this;
      }
+
      GenericRubiksCube &r() override {
          this->rotateFace(3);
          uint64_t clr1 = (bitboard[0] & (one_8 << (8 * 2))) >> (8 * 2);
@@ -194,6 +204,7 @@
 
          return *this;
      }
+
      GenericRubiksCube &rPrime() override {
          this->r();
          this->r();
@@ -201,6 +212,7 @@
 
          return *this;
      }
+
      GenericRubiksCube &r2() override {
          this->r();
          this->r();
@@ -225,6 +237,7 @@
 
          return *this;
      }
+
      GenericRubiksCube &bPrime() override {
          this->b();
          this->b();
@@ -232,12 +245,14 @@
 
          return *this;
      }
+
      GenericRubiksCube &b2() override {
          this->b();
          this->b();
 
          return *this;
      }
+
      GenericRubiksCube &d() override {
          this->rotateFace(5);
 
@@ -255,6 +270,7 @@
 
          return *this;
      }
+
      GenericRubiksCube &dPrime() override {
          this->d();
          this->d();
@@ -269,19 +285,22 @@
 
          return *this;
      }
+
      bool operator==(const RubiksCubeBitboard &r1) const {
          for (int i = 0; i < 6; i++) {
              if (this->bitboard[i] != r1.bitboard[i]) return false;
          }
          return true;
      }
+
      RubiksCubeBitboard &operator=(const RubiksCubeBitboard &r1) {
          for (int i = 0; i < 6; i++) {
              bitboard[i] = r1.bitboard[i];
          }
          return *this;
      }
-     uint64_t getCorners(){
+
+     uint64_t getCorners() {
          uint64_t ret = 0;
          string top_front_right = "";
          top_front_right += getColorLetter(getColor(FACE::UP, 2, 2));
@@ -347,6 +366,7 @@
          ret |= get5bitCorner(bottom_back_left);
          ret = ret << 5;
      }
+
      struct HashBitboard {
          size_t operator()(const RubiksCubeBitboard &r1) const {
              uint64_t final_hash = r1.bitboard[0];
@@ -354,3 +374,4 @@
              return (size_t) final_hash;
          }
      };
+ };

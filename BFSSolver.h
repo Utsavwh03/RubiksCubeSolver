@@ -5,7 +5,6 @@
 #ifndef RUBIKSCUBESOLVER_BFSSOLVER_H
 #define RUBIKSCUBESOLVER_BFSSOLVER_H
 
-#endif //RUBIKSCUBESOLVER_BFSSOLVER_H
 #include "GenericRubiksCube.h"
 #include "unordered_map"
 #include "queue"
@@ -61,3 +60,4 @@ public:
         return moves;
     }
 };
+#endif //RUBIKSCUBESOLVER_BFSSOLVER_H

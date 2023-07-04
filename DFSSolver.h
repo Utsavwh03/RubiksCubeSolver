@@ -5,7 +5,6 @@
 #ifndef RUBIKSCUBESOLVER_DFSSOLVER_H
 #define RUBIKSCUBESOLVER_DFSSOLVER_H
 
-#endif //RUBIKSCUBESOLVER_DFSSOLVER_H
 #include "GenericRubiksCube.h"
 
 template<typename T, typename H>
@@ -32,12 +31,14 @@ private:
 public:
     T rubiksCube;
     int max_depth_search;
-    DFSSolver(T _rubiksCube,int dep=10){
+    DFSSolver(T _rubiksCube,int dep=8){
             rubiksCube=_rubiksCube;
             max_depth_search=dep;
     }
     vector<GenericRubiksCube::MOVE>solve(){
-       dfs(1);
+       int a=dfs(1);
         return moves;
     }
 };
+#endif //RUBIKSCUBESOLVER_DFSSOLVER_H
+
