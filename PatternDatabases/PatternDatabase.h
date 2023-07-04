@@ -12,6 +12,7 @@ class PatternDatabase {
     size_t size;
     size_t numItems;
 
+protected:
     PatternDatabase();
 
 public:
