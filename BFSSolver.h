@@ -51,7 +51,7 @@ public:
     }
     vector<GenericRubiksCube::MOVE>solve(){
         T solved_cube=bfs();
-        while(solved_cube!=rubiksCube){
+        while(!(solved_cube==rubiksCube)){
             moves.push_back(move_done[solved_cube]);
             auto cur_move=move_done[solved_cube];
             solved_cube.invert(cur_move);
