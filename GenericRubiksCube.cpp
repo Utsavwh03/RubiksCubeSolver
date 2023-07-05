@@ -19,7 +19,7 @@ using namespace std;
          return 'Y';
      } else if (color == COLOR::WHITE) {
          return 'W';
-     } else if (color == COLOR::ORANGE) {
+     } else{        // last remaining color option is orange
          return 'O';
      }
 }
@@ -58,7 +58,7 @@ string GenericRubiksCube::getMove(GenericRubiksCube::MOVE ind) {
         return "B";
     } else if (ind == MOVE::BPRIME) {
         return "B'";
-    } else if (ind == MOVE::B2) {
+    } else{     // only remaining option B2
         return "B2";
     }
 }
@@ -100,7 +100,7 @@ GenericRubiksCube &GenericRubiksCube::move(GenericRubiksCube::MOVE ind) {
         return this->b();
     } else if (ind == MOVE::BPRIME) {
         return this->bPrime();
-    } else if (ind == MOVE::B2) {
+    } else{         // last one is b2
         return this->b2();
     }
 }
@@ -142,7 +142,7 @@ GenericRubiksCube &GenericRubiksCube::invert(GenericRubiksCube::MOVE ind) {
         return this->b();
     } else if (ind == MOVE::BPRIME) {
         return this->bPrime();
-    } else if (ind == MOVE::B2) {
+    } else{         // handled by b2 for case b2
         return this->b2();
     }
 }
