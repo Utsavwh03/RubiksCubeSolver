@@ -6,13 +6,15 @@
 #define RUBIKSCUBESOLVER_NIBBLEARRAY_H
 
 #include "vector"
+#include <stdint.h>
 using namespace std;
 class NibbleArray {
     size_t size;
     vector<uint8_t> arr;
 
 public:
-    NibbleArray(const size_t size, const uint8_t val = 0xFF);
+    // Constructor
+    NibbleArray(const size_t size, const uint8_t val = 0xFF);       // 0xff (hexadec) = 1111 1111 (binary)
 
     uint8_t get(const size_t pos) const;
 
@@ -27,7 +29,6 @@ public:
     void inflate(vector<uint8_t> &dest) const;
 
     void reset(const uint8_t val = 0xFF);
-
 };
 
 

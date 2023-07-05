@@ -26,10 +26,8 @@ public:
     /**
      * Popluate factorials and ones-count tables.
      */
-    PermutationIndexer()
-    {
-        for (uint32_t i = 0; i < (1 << N) - 1; ++i)
-        {
+    PermutationIndexer(){
+        for (uint32_t i = 0; i < (1 << N) - 1; ++i){
             bitset<N>bits(i);
             this->onesCountLookup[i] = bits.count();
         }
