@@ -56,7 +56,7 @@ public:
    * Returns the first letter of the given COLOR
    * Eg: For COLOR::GREEN, it returns 'G'
    */
-    static char getColorLetter(COLOR color) ;
+    static char getColorLetter(COLOR color);
     /*
      * Returns true if the Rubik Cube is solved, otherwise returns false.
      */

@@ -11,7 +11,7 @@
 template<typename T,typename H>
 class IDDFSSolver{
 private:
-        vector<GenericRubiksCube::MOVE>moves;
+    vector<GenericRubiksCube::MOVE>moves;
 public:
     T rubikscube;
     int max_depth;
@@ -21,10 +21,10 @@ public:
     }
     vector<GenericRubiksCube::MOVE> solve(){
         for(int i=0;i<max_depth;i++){
-            DFSSolver<T,H> dfssolve(rubikscube,i);
-            moves=dfssolve.solve();
+            DFSSolver <T,H> dfssolve(rubikscube,i);
+            moves = dfssolve.solve();
             if(dfssolve.rubiksCube.isSolved()){
-                rubikscube=dfssolve.rubiksCube;
+                rubikscube = dfssolve.rubiksCube;
                 break;
             }
         }

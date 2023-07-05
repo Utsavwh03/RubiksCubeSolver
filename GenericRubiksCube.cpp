@@ -19,7 +19,7 @@ using namespace std;
          return 'Y';
      } else if (color == COLOR::WHITE) {
          return 'W';
-     } else if (color == COLOR::ORANGE) {
+     } else{        // last remaining color option is orange
          return 'O';
      }
 }
@@ -58,7 +58,7 @@ string GenericRubiksCube::getMove(GenericRubiksCube::MOVE ind) {
         return "B";
     } else if (ind == MOVE::BPRIME) {
         return "B'";
-    } else if (ind == MOVE::B2) {
+    } else{     // only remaining option B2
         return "B2";
     }
 }
@@ -100,7 +100,7 @@ GenericRubiksCube &GenericRubiksCube::move(GenericRubiksCube::MOVE ind) {
         return this->b();
     } else if (ind == MOVE::BPRIME) {
         return this->bPrime();
-    } else if (ind == MOVE::B2) {
+    } else{         // last one is b2
         return this->b2();
     }
 }
@@ -109,40 +109,40 @@ GenericRubiksCube &GenericRubiksCube::move(GenericRubiksCube::MOVE ind) {
  */
 GenericRubiksCube &GenericRubiksCube::invert(GenericRubiksCube::MOVE ind) {
     if (ind == MOVE::L) {
-        return this->l();
-    } else if (ind == MOVE::LPRIME) {
         return this->lPrime();
+    } else if (ind == MOVE::LPRIME) {
+        return this->l();
     } else if (ind == MOVE::L2) {
         return this->l2();
     } else if (ind == MOVE::R) {
-        return this->r();
-    } else if (ind == MOVE::RPRIME) {
         return this->rPrime();
+    } else if (ind == MOVE::RPRIME) {
+        return this->r();
     } else if (ind == MOVE::R2) {
         return this->r2();
     } else if (ind == MOVE::U) {
-        return this->u();
-    } else if (ind == MOVE::UPRIME) {
         return this->uPrime();
+    } else if (ind == MOVE::UPRIME) {
+        return this->u();
     } else if (ind == MOVE::U2) {
         return this->u2();
     } else if (ind == MOVE::D) {
-        return this->d();
-    } else if (ind == MOVE::DPRIME) {
         return this->dPrime();
+    } else if (ind == MOVE::DPRIME) {
+        return this->d();
     } else if (ind == MOVE::D2) {
         return this->d2();
     } else if (ind == MOVE::F) {
-        return this->f();
-    } else if (ind == MOVE::FPRIME) {
         return this->fPrime();
+    } else if (ind == MOVE::FPRIME) {
+        return this->f();
     } else if (ind == MOVE::F2) {
         return this->f2();
     } else if (ind == MOVE::B) {
-        return this->b();
-    } else if (ind == MOVE::BPRIME) {
         return this->bPrime();
-    } else if (ind == MOVE::B2) {
+    } else if (ind == MOVE::BPRIME) {
+        return this->b();
+    } else{         // handled by b2 for case b2
         return this->b2();
     }
 }
