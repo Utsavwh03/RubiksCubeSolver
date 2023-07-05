@@ -24,7 +24,7 @@ int main(){
     // }
 
     // vector <GenericRubiksCube::MOVE> movestoShuffle;
-    BFSSolver <RubiksCube3dArray,RubiksCube3dArray::Hash3d> cube3(cube2);
+    IDDFSSolver <RubiksCube3dArray,RubiksCube3dArray::Hash3d> cube3(cube2, 10);
     vector <GenericRubiksCube::MOVE> movestoSolve = cube3.solve();
     cout << "To solve the above cube, perform following moves:" << endl;
     for(auto m : movestoSolve){

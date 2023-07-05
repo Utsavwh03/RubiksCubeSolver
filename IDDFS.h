@@ -13,18 +13,18 @@ class IDDFSSolver{
 private:
     vector<GenericRubiksCube::MOVE>moves;
 public:
-    T rubikscube;
+    T rubiksCube;
     int max_depth;
     IDDFSSolver(T _rubikscube,int _max_depth=8){
-        rubikscube=_rubikscube;
+        rubiksCube=_rubikscube;
         max_depth=_max_depth;
     }
     vector<GenericRubiksCube::MOVE> solve(){
         for(int i=0;i<max_depth;i++){
-            DFSSolver <T,H> dfssolve(rubikscube,i);
+            DFSSolver <T,H> dfssolve(rubiksCube,i);
             moves = dfssolve.solve();
             if(dfssolve.rubiksCube.isSolved()){
-                rubikscube = dfssolve.rubiksCube;
+                rubiksCube = dfssolve.rubiksCube;
                 break;
             }
         }
