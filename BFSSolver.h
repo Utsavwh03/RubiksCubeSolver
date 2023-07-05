@@ -58,8 +58,8 @@ public:
         T cur = solved_cube;
 
         while(!(cur == rubiksCube)){
-            moves.push_back(move_done[cur]);
-            auto cur_move=move_done[cur];
+            auto cur_move = move_done[cur];
+            moves.push_back(cur_move);
             cur.invert(cur_move);
         }
 

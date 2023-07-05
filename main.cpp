@@ -2,7 +2,9 @@
 #include "GenericRubiksCube.h"
 #include "GenericRubiksCube.cpp"
 #include "RubiksCube3dArray.cpp"
+#include "DFSSolver.h"
 #include "BFSSolver.h"
+#include "IDDFS.h"
 #include "vector"
 
 using namespace std;
@@ -12,6 +14,7 @@ int main(){
     // cube1.print();
     RubiksCube3dArray cube2;
     cube2.l();
+    cube2.u2();
     cube2.print();
     // if(cube1==cube2){
     //     cout<<"Same"<<endl;
