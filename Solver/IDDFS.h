@@ -5,7 +5,7 @@
 #ifndef RUBIKSCUBESOLVER_IDDFS_H
 #define RUBIKSCUBESOLVER_IDDFS_H
 
-#include "GenericRubiksCube.h"
+#include "../GenericRubiksCube.h"
 #include "DFSSolver.h"
 
 template<typename T,typename H>
