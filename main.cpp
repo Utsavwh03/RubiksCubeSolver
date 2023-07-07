@@ -2,9 +2,9 @@
 #include "GenericRubiksCube.h"
 #include "GenericRubiksCube.cpp"
 #include "RubiksCube3dArray.cpp"
-#include "DFSSolver.h"
-#include "BFSSolver.h"
-#include "IDDFS.h"
+#include "Solver/DFSSolver.h"
+#include "Solver/BFSSolver.h"
+#include "Solver/IDDFS.h"
 #include "vector"
 
 using namespace std;
