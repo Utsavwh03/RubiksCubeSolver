@@ -192,16 +192,19 @@ GenericRubiksCube &GenericRubiksCube::invert(GenericRubiksCube::MOVE ind) {
      }
      cout << "\n";
  }
+
+// performs random moves on the rubiksCube and returns a vector containing the moves performed
  vector<GenericRubiksCube::MOVE> GenericRubiksCube::randomShuffleCube(unsigned int times) {
-     vector<MOVE> moves_performed;
-     srand(time(0));
-     for (unsigned int i = 0; i < times; i++) {
-         unsigned int selectMove = (rand() % 18);
-         moves_performed.push_back(static_cast<MOVE>(selectMove));
-         this->move(static_cast<MOVE>(selectMove));
-     }
-     return moves_performed;
+    vector<MOVE> moves_performed;
+    srand(time(0));
+    for (unsigned int i = 0; i < times; i++) {
+        unsigned int selectMove = (rand() % 18);
+        moves_performed.push_back(static_cast<MOVE>(selectMove));
+        this->move(static_cast<MOVE>(selectMove));
+    }
+    return moves_performed;
 }
+
 string GenericRubiksCube::getCornerColorString(uint8_t ind) const {
     string str="";
     switch (ind) {
@@ -263,6 +266,7 @@ string GenericRubiksCube::getCornerColorString(uint8_t ind) const {
     }
     return str;
 }
+
 uint8_t GenericRubiksCube::getCornerIndex(uint8_t ind) const {
     string corner = getCornerColorString(ind);
 
@@ -289,6 +293,7 @@ uint8_t GenericRubiksCube::getCornerIndex(uint8_t ind) const {
     }
     return ret;
 }
+
 uint8_t GenericRubiksCube::getCornerOrientation(uint8_t ind) const {
     string corner = getCornerColorString(ind);
 

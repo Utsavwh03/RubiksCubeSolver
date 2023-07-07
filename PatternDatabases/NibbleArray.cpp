@@ -4,11 +4,13 @@
 
 #include "NibbleArray.h"
 #include "vector"
+#include <cassert>
 using namespace std;
 
 NibbleArray::NibbleArray(const size_t size, const uint8_t val) :
         size(size), arr(size / 2 + 1, val) {
 }
+
 uint8_t NibbleArray::get(const size_t pos) const {
     size_t i = pos / 2;
     assert(pos <= this->size);
@@ -20,9 +22,10 @@ uint8_t NibbleArray::get(const size_t pos) const {
     }
 //    Even pos: first 4 bits from the left
     else {
-        return val >> 4;
+        return (val >> 4);
     }
 }
+
 void NibbleArray::set(const size_t pos, const uint8_t val) {
     size_t i = pos / 2;
     uint8_t currVal = this->arr.at(i);

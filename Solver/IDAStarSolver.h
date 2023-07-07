@@ -109,15 +109,4 @@ public:
 
 };
 
-
-
-
-
-
-
-
-
-
-
-
 #endif //RUBIKSCUBESOLVER_IDASTARSOLVER_H

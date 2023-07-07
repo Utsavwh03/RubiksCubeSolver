@@ -8,7 +8,7 @@
 using namespace std;
 
 PatternDatabase::PatternDatabase(const size_t size) :
-        database(size, 0xFF), size(size), numItems(0) {
+        database(size, 0xFF), size(size), numItems(0){
 }
 
 PatternDatabase::PatternDatabase(const size_t size, uint8_t init_val) :
@@ -30,7 +30,6 @@ bool PatternDatabase::setNumMoves(const uint32_t ind, const uint8_t numMoves) {
         return true;
     }
     return false;
-
 }
 bool PatternDatabase::setNumMoves(const GenericRubiksCube &cube, const uint8_t numMoves) {
     return this->setNumMoves(this->getDatabaseIndex(cube), numMoves);

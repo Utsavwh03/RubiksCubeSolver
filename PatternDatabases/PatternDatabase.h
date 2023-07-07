@@ -40,7 +40,6 @@ public:
 
     virtual void toFile(const string &filePath) const;
 
-
     virtual vector<uint8_t> inflate() const;
 
     virtual void reset();
