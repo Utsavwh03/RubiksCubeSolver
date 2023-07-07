@@ -5,7 +5,7 @@
 #ifndef RUBIKSCUBESOLVER_BFSSOLVER_H
 #define RUBIKSCUBESOLVER_BFSSOLVER_H
 
-#include "GenericRubiksCube.h"
+#include "../GenericRubiksCube.h"
 #include "unordered_map"
 #include "queue"
 #include "vector"
@@ -15,7 +15,7 @@ class BFSSolver{
 private:
     // H represents the custom hash function for the representation T of Rubik's Cube passed
     unordered_map <T, bool, H> visited;
-    unordered_map <T, GenericRubiksCube::MOVE, H> move_done;        // stores best move done to reach state T of Cube
+    unordered_map <T, GenericRubiksCube::MOVE, H> move_done;// stores best move done to reach state T of Cube
 
     T bfs(){
         queue <T> q;

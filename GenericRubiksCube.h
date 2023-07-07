@@ -4,11 +4,11 @@
 
 #ifndef RUBIKSCUBESOLVER_GENERICRUBIKSCUBE_H
 #define RUBIKSCUBESOLVER_GENERICRUBIKSCUBE_H
-using namespace std;
 #include "vector"
 #include "string"
 #include "iostream"
 #include <time.h>
+using namespace std;
 
 /**
  * A base class for all Rubik's Cube Model. There are various representation for Rubik's Cube.

@@ -365,6 +365,7 @@
 
          ret |= get5bitCorner(bottom_back_left);
          ret = ret << 5;
+         return ret;
      }
 
      struct HashBitboard {

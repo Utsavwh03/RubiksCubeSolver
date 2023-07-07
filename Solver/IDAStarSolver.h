@@ -4,9 +4,9 @@
 
 #ifndef RUBIKSCUBESOLVER_IDASTARSOLVER_H
 #define RUBIKSCUBESOLVER_IDASTARSOLVER_H
-#include "GenericRubiksCube.h"
+#include "../GenericRubiksCube.h"
 #include "vector"
-#include "PatternDatabases/CornerPatternDatabase.h"
+#include "../PatternDatabases/CornerPatternDatabase.h"
 #include "unordered_map"
 #include "queue"
 
@@ -25,6 +25,7 @@ private:
         }
     };
     class CompareCube{
+    public:
         bool operator()(pair<Node, int> const &p1, pair<Node, int> const &p2){
                 auto n1=p1.first ;
                 auto n2=p2.first;
@@ -86,7 +87,7 @@ public:
         rubiksCube = _rubiksCube;
         cornerDB.fromFile(fileName);
     }
-    vector<GenericRubiksCube:MOVE> solve() {
+    vector<GenericRubiksCube::MOVE> solve() {
             int bound = 1;
             auto p = IDAstar(bound);
             while (p.second != bound) {

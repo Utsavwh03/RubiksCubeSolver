@@ -231,7 +231,7 @@ public:
         return *this;
     }
 
-    bool operator==(const RubiksCube1dArray &r1) {
+    bool operator==(const RubiksCube1dArray &r1)const {
         for (int i = 0; i < 54; i++) {
             if (this->cube[i] != r1.cube[i])return false;
         }

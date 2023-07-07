@@ -5,7 +5,7 @@
 #ifndef RUBIKSCUBESOLVER_DFSSOLVER_H
 #define RUBIKSCUBESOLVER_DFSSOLVER_H
 
-#include "GenericRubiksCube.h"
+#include "../GenericRubiksCube.h"
 
 template<typename T, typename H>
 class DFSSolver{

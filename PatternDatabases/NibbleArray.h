@@ -6,6 +6,7 @@
 #define RUBIKSCUBESOLVER_NIBBLEARRAY_H
 
 #include "vector"
+#include "assert.h"
 using namespace std;
 class NibbleArray {
     size_t size;
